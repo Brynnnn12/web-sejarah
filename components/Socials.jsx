@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 
 const socials = [
-  { icon: <FaGithub />, path: "https://github.com" },
   { icon: <FaFacebookF />, path: "https://www.facebook.com" },
   { icon: <FaInstagram />, path: "https://www.instagram.com" },
   { icon: <FaTwitter />, path: "https://twitter.com" },

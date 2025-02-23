@@ -19,14 +19,14 @@ function ArticlePage() {
     <div className="min-h-screen bg-slate-50">
       <Navbar />
       <motion.article
-        className="container mx-auto  py-16"
+        className="container mx-auto"
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeInOut" }} // Lebih lambat dan halus
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto py-12">
           <motion.div
-            className="relative w-full h-96 mb-8"
+            className="relative w-full h-96 mb-4 xl:mb-8"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }} // Efek fade-in lebih smooth
@@ -35,12 +35,12 @@ function ArticlePage() {
               src={article.image}
               alt={article.title}
               fill
-              className="object-contain xl:object-cover px-4 rounded-lg"
+              className=" object-cover px-4 rounded-lg"
               priority
             />
           </motion.div>
           <motion.p
-            className="text-gray-500 px-6 mb-4"
+            className="text-gray-500 px-6 mb-2 xl:mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }} // Tambahkan delay agar lebih smooth
@@ -48,7 +48,7 @@ function ArticlePage() {
             {article.date}
           </motion.p>
           <motion.h1
-            className="text-2xl xl:text-4xl px-4 text-gray-800 font-bold mb-8"
+            className="text-2xl xl:text-4xl px-6 text-gray-800 font-bold mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }} // Judul muncul perlahan
