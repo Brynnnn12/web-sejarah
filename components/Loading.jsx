@@ -11,7 +11,7 @@ const Loading = () => {
     <AnimatePresence mode="wait">
       <motion.div
         key={path}
-        className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-black/10 backdrop-blur-sm pointer-events-none"
+        className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-white backdrop-blur-sm pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         exit={{ opacity: 1 }}
@@ -32,7 +32,7 @@ const Loading = () => {
           </motion.div>
 
           <motion.div
-            className="w-16 h-4 bg-white/20 rounded-full mt-4"
+            className="w-16 h-4 bg-white rounded-full mt-4"
             initial={{ scaleX: 1, opacity: 0.5 }}
             animate={{ scaleX: [1, 0.6, 1], opacity: [0.5, 0.2, 0.5] }}
             transition={{
