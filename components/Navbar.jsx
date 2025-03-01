@@ -1,9 +1,14 @@
-// src/components/Navbar.jsx
 "use client";
 import { useState } from "react";
 import { Home, Book, Clock, Menu, X } from "lucide-react";
 import SearchBar from "./SearchBar";
 import Link from "next/link";
+
+const menuItems = [
+  { href: "/", label: "Beranda", icon: Home },
+  { href: "/timeline", label: "Timeline", icon: Clock },
+  { href: "/articles", label: "Artikel", icon: Book },
+];
 
 function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,27 +38,16 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <Link
-            href="/"
-            className="flex items-center space-x-1 hover:text-slate-300"
-          >
-            <Home className="h-4 w-4" />
-            <span>Beranda</span>
-          </Link>
-          <Link
-            href="/timeline"
-            className="flex items-center space-x-1 hover:text-slate-300"
-          >
-            <Clock className="h-4 w-4" />
-            <span>Timeline</span>
-          </Link>
-          <Link
-            href="/articles"
-            className="flex items-center space-x-1 hover:text-slate-300"
-          >
-            <Book className="h-4 w-4" />
-            <span>Artikel</span>
-          </Link>
+          {menuItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex items-center space-x-1 hover:text-slate-300"
+            >
+              <item.icon className="h-4 w-4" />
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </div>
 
         {/* Search Bar for Desktop */}
@@ -65,15 +59,15 @@ function Navbar() {
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 bg-slate-800 p-4">
-          <Link href="/" className="block py-2 hover:text-slate-300">
-            <Home className="h-4 w-4 inline" /> Beranda
-          </Link>
-          <Link href="/timeline" className="block py-2 hover:text-slate-300">
-            <Clock className="h-4 w-4 inline" /> Timeline
-          </Link>
-          <Link href="/articles" className="block py-2 hover:text-slate-300">
-            <Book className="h-4 w-4 inline" /> Artikel
-          </Link>
+          {menuItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block py-2 hover:text-slate-300"
+            >
+              <item.icon className="h-4 w-4 inline" /> {item.label}
+            </Link>
+          ))}
 
           {/* Search Bar for Mobile */}
           <div className="mt-4">

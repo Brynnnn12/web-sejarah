@@ -92,6 +92,7 @@ function ArticlesPage() {
                 y: 0,
                 transition: { duration: 1, ease: "easeOut" },
               }}
+              className="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
               <Link
                 href={`/articles/${article.id}`}
@@ -109,7 +110,7 @@ function ArticlesPage() {
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="object-cover"
+                    className="object-cover hove"
                     priority
                   />
                 </motion.div>

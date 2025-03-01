@@ -1,4 +1,3 @@
-// src/data/articles.js
 export const articles = [
   {
     id: "proklamasi-kemerdekaan",
@@ -7,6 +6,8 @@ export const articles = [
     date: "17 Agustus 1945",
     image: "/images/articles/proklamasi.jpg",
     category: "Masa Kemerdekaan",
+    views: 1024,
+    likes: 250,
     content: `
       Proklamasi Kemerdekaan Indonesia dilaksanakan pada hari Jumat tanggal 17 Agustus 1945. 
       Teks proklamasi dibacakan oleh Ir. Soekarno yang didampingi oleh Drs. Mohammad Hatta di 
@@ -26,6 +27,8 @@ export const articles = [
     date: "1293 - 1500",
     image: "/images/articles/majapahit.jpg",
     category: "Pra-Kemerdekaan",
+    views: 875,
+    likes: 190,
     content: `
       Majapahit adalah sebuah kerajaan yang berpusat di Jawa Timur, Indonesia, yang pernah 
       berdiri dari sekitar tahun 1293 hingga 1500 M. Kerajaan ini mencapai puncak kejayaannya 
@@ -39,6 +42,8 @@ export const articles = [
     date: "28 Oktober 1928",
     image: "/images/articles/sumpah-pemuda.jpg",
     category: "Pra-Kemerdekaan",
+    views: 980,
+    likes: 230,
     content: `
       Sumpah Pemuda adalah satu tonggak utama dalam sejarah pergerakan kemerdekaan Indonesia. 
       Ikrar ini diucapkan pada tanggal 28 Oktober 1928 dan dianggap sebagai kristalisasi 
@@ -52,6 +57,8 @@ export const articles = [
     date: "Mei 1998",
     image: "/images/articles/reformasi.jpg",
     category: "Era Modern",
+    views: 1120,
+    likes: 300,
     content: `
       Reformasi 1998 adalah masa perubahan besar dalam sejarah Indonesia yang ditandai 
       dengan berakhirnya masa Orde Baru dan dimulainya era Reformasi.
@@ -62,8 +69,10 @@ export const articles = [
     title: "Sultan Agung Melawan VOC",
     desc: "Perjuangan Sultan Agung dalam melawan kekuasaan VOC di Nusantara",
     date: "1628 - 1629",
-    image: "/images/articles/sultan-aung.jpg",
+    image: "/images/articles/sultan-agung.jpg",
     category: "Pra-Kemerdekaan",
+    views: 720,
+    likes: 170,
     content: `
       Sultan Agung dari Mataram adalah salah satu pemimpin terbesar dalam sejarah Nusantara. 
       Ia berupaya mengusir VOC yang mulai menancapkan kekuasaannya di Batavia. 
@@ -85,6 +94,8 @@ export const articles = [
     date: "20 November 1945",
     image: "/images/articles/ambarawa.jpg",
     category: "Masa Kemerdekaan",
+    views: 860,
+    likes: 210,
     content: `
       Pertempuran Ambarawa adalah salah satu pertempuran penting dalam sejarah kemerdekaan Indonesia. 
       Terjadi pada November hingga Desember 1945, pertempuran ini melibatkan pasukan Indonesia yang 
@@ -102,6 +113,8 @@ export const articles = [
     date: "1942 - 1945",
     image: "/images/articles/pendudukan-jepang.jpg",
     category: "Pra-Kemerdekaan",
+    views: 930,
+    likes: 220,
     content: `
       Pendudukan Jepang di Indonesia berlangsung dari tahun 1942 hingga 1945 setelah Jepang 
       berhasil mengalahkan Belanda dalam Perang Dunia II. Jepang awalnya datang dengan janji 

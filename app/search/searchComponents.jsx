@@ -16,56 +16,58 @@ export default function SearchComponent() {
     setQuery(searchParams.get("q") || "");
   }, [searchParams]);
 
-  const searchResults = articles.filter(
-    (article) =>
-      article.title.toLowerCase().includes(query.toLowerCase()) ||
-      article.desc.toLowerCase().includes(query.toLowerCase()) ||
-      article.content.toLowerCase().includes(query.toLowerCase())
-  );
+  // Filter artikel berdasarkan pencarian
+  const searchResults = query
+    ? articles.filter(
+        (article) =>
+          article.title.toLowerCase().includes(query.toLowerCase()) ||
+          article.desc.toLowerCase().includes(query.toLowerCase()) ||
+          article.content.toLowerCase().includes(query.toLowerCase())
+      )
+    : articles; // Jika query kosong, tampilkan semua artikel
 
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-xl xl:text-3xl text-gray-800 font-bold mb-8">
-          Hasil pencarian untuk "{query}"
+          {query ? `Hasil pencarian untuk "${query}"` : "Semua Artikel"}
         </h1>
 
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {searchResults.map((article) => (
             <Link
               href={`/articles/${article.id}`}
               key={article.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden flex hover:shadow-xl transition-shadow transform hover:scale-105 duration-300"
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-105 overflow-hidden"
             >
-              <div className="w-48 h-48 relative overflow-hidden">
+              <div className="relative w-full h-48">
                 <Image
                   src={article.image}
                   alt={article.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  layout="fill"
                   className="object-cover"
                 />
               </div>
-              <div className="p-4 flex-1">
-                <p className="text-xs xl:text-sm text-gray-500 mb-2">
-                  {article.date}
-                </p>
-                <h2 className="text-sm xl:text-xl font-bold text-gray-800 mb-2">
+              <div className="p-4">
+                <p className="text-xs text-gray-500 mb-1">{article.date}</p>
+                <h2 className="text-lg font-semibold text-gray-800 mb-1">
                   {article.title}
                 </h2>
-                <p className="text-sm xl:text-xl text-gray-600">
+                <p className="text-sm text-gray-600 line-clamp-2">
                   {article.desc}
                 </p>
               </div>
             </Link>
           ))}
-          {searchResults.length === 0 && (
-            <p className="text-center text-gray-600">
-              Tidak ada hasil yang ditemukan untuk "{query}"
-            </p>
-          )}
         </div>
+
+        {/* Tampilkan pesan jika hasil pencarian kosong */}
+        {searchResults.length === 0 && (
+          <div className="text-center text-gray-600 py-32">
+            <p>Tidak ada hasil yang ditemukan untuk "{query}"</p>
+          </div>
+        )}
       </div>
       <Footer />
     </div>

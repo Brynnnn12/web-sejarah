@@ -55,6 +55,7 @@ function ArticlePage() {
           >
             {article.title}
           </motion.h1>
+
           <motion.div
             className="prose prose-lg px-4 max-w-none"
             initial={{ opacity: 0 }}
